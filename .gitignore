@@ -145,11 +145,11 @@ models/*.pb
 models/*.onnx
 
 # Output files
-assets/*.png
-assets/*.jpg
-assets/*.pdf
-assets/*.svg
-outputs/
+# assets/*.png
+# assets/*.jpg
+# assets/*.pdf
+# assets/*.svg
+# outputs/
 logs/
 
 # TensorFlow
